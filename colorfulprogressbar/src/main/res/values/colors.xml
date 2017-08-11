@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="ltcolorPrimary">#2E49FF</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="ltcolorAccent">#FF8081</color>
+    <color name="progressBg">#FFDDDDDD</color>
+    <color name="secondProgressColor">#f8db90</color>
+    <color name="orange">#F4AF0B</color>
+    <color name="ltorange">#F4Df0B</color>
+    <color name="yellow_green">#F4F462</color>
+    <color name="green">#25AA23</color>
+    <color name="ltgreen">#25DD23</color>
+    <color name="white">#ffffff</color>
+</resources>

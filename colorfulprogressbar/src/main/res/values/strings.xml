@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ColorfulProgressBar</string>
+    <string name="style_normal">normal</string>
+    <string name="style_colorful">colorful</string>
+</resources>
