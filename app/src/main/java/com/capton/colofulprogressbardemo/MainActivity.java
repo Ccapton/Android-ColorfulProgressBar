@@ -55,9 +55,7 @@ public class MainActivity extends AppCompatActivity {
         aSwitch= (Switch) findViewById(R.id.switch1);
         aSwitch2= (Switch) findViewById(R.id.switch2);
 
-        progressbar.setHeight(DisplayUtil.dip2px(this,20));
-        progressbar.setPercentColorRes(R.color.yellow_green);
-        progressbar.setPercentShaderColorRes(R.color.progressBg);
+        progressbar.setHeight(DisplayUtil.dip2px(this,20)); 
 
         progressbar2.setHeight(DisplayUtil.dip2px(this,10));
         progressbar2.setStyle(ColorfulProgressbar.STYLE_NORMAL);
