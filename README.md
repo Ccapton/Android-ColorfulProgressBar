@@ -13,8 +13,12 @@
 
 ### 演示Demo
 
+当前是修改了视图的版本，如下图所示，跟上图演示动画对比，第二进度条似乎更加立体了，它像是被镶嵌在了主控件中
+
+![](https://raw.githubusercontent.com/Ccapton/Android-ColofulProgressBar/master/afterEdition.png)
+
 demo下载：
-https://github.com/Ccapton/Android-ColorfulProgressBar/blob/master/ColorfulProgressDemo.apk
+https://github.com/Ccapton/Android-ColorfulProgressBar/blob/master/ColorfulProgressBarDemo_1_0_1.apk
 
 ### 特性 
 与原生Progress相比，感觉更漂亮一点，可以显示进度值，背景凹凸感明显，进度条效果更加立体。
