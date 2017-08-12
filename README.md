@@ -43,7 +43,7 @@ allprojects {
 build.gradle(Module:app)
 ``` code
  dependencies {
-	         compile 'com.github.Ccapton:Android-ColorfulProgressBar:1.1.0'
+	         compile 'com.github.Ccapton:Android-ColorfulProgressBar:1.0.2'
 	}
 ```
 
