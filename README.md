@@ -61,7 +61,7 @@ build.gradle(Module:app)
  setProgressColorRes(int progressColorRes);  // 设置进度条颜色一
  setProgressColor2Res(int progressColor2Res)  // 设置进度条颜色二
  setPercentColorRes(int percentColorRes);       //设置进度文字的颜色
- setPercentShadeColorRes(int percentShadeColorRes);  //设置进度文字的阴影颜色
+ setPercentShaderColorRes(int percentShadeColorRes);  //设置进度文字的阴影颜色
  setBackgroundColorRes(int backgroundColorRes)     //设置控件背景色
   
 ```
