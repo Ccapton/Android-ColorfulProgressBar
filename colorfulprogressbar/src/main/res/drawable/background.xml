@@ -9,6 +9,5 @@
         android:gradientRadius="1dp"
         android:centerX="50%"
         android:endColor="#33aaaaaa"/>
-    <corners android:radius="3dp"/>
-
+  
 </shape>
