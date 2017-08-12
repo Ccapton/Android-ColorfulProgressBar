@@ -13,7 +13,7 @@
 
 ### 演示Demo
 
-当前是修改了视图的版本，如下图所示，跟上图演示动画对比，第二进度条似乎更加立体了，它像是被镶嵌在了主控件中
+当前是修改了视图的版本，如下图所示，第二进度条似乎更加立体了，它像是被镶嵌在了主控件中
 
 ![](https://raw.githubusercontent.com/Ccapton/Android-ColofulProgressBar/master/afterEdition.png)
 
