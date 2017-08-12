@@ -9,7 +9,7 @@
 
 ### 示例:  
 
-![](https://raw.githubusercontent.com/Ccapton/Android-ColofulProgressBar/master/ColorfulProgressDemo_1_0_3.gif)
+![](https://raw.githubusercontent.com/Ccapton/Android-ColofulProgressBar/master/ColorfulProgressbarDemo_1_0_3.gif)
 
 ### 演示Demo
 
