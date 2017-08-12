@@ -9,7 +9,7 @@
 
 ### 示例:  
 
-![](https://raw.githubusercontent.com/Ccapton/Android-ColofulProgressBar/master/ColorfulProgressDemo.gif)
+![](https://raw.githubusercontent.com/Ccapton/Android-ColofulProgressBar/master/ColorfulProgressDemo_1_0_3.gif)
 
 ### 演示Demo
 
@@ -18,7 +18,7 @@
 ![](https://raw.githubusercontent.com/Ccapton/Android-ColofulProgressBar/master/afterEdition.png)
 
 demo下载：
-https://github.com/Ccapton/Android-ColorfulProgressBar/blob/master/ColorfulProgressBarDemo_1_0_1.apk
+https://github.com/Ccapton/Android-ColorfulProgressBar/blob/master/ColorfulProgressBarDemo_1_0_3.apk
 
 ### 特性 
 与原生Progress相比，感觉更漂亮一点，可以显示进度值，背景凹凸感明显，进度条效果更加立体。
@@ -43,7 +43,7 @@ allprojects {
 build.gradle(Module:app)
 ``` code
  dependencies {
-	         compile 'com.github.Ccapton:Android-ColorfulProgressBar:1.0.2'
+	         compile 'com.github.Ccapton:Android-ColorfulProgressBar:1.0.3'
 	}
 ```
 
