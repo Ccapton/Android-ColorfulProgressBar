@@ -394,7 +394,7 @@ public class ColorfulProgressbar extends ViewGroup {
             if(getChildAt(2).getX()+getMeasuredWidth()>getChildAt(4).getMeasuredHeight()*2) {
                 getChildAt(4).setX(getChildAt(2).getX()+getMeasuredWidth()-getChildAt(4).getMeasuredHeight()*2);
             }
-            percentView.setText((int) ((float) partition2 * 100) + "%");
+            percentView.setText((int) ((float) partition2 * maxProgress) + "%");
 
                  /*
                  * 根据标志位，确定是否显示百分比文字显示层。
