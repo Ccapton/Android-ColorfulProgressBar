@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="ColorfulProgressbar">
         <attr name="style" format="string|reference"/>
+        <attr name="animation" format="boolean"/>
         <attr name="max" format="integer|reference"/>
         <attr name="progress" format="integer|reference"/>
         <attr name="secondProgress" format="integer|reference"/>

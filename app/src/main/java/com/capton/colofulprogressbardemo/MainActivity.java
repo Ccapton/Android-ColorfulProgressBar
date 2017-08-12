@@ -1,13 +1,16 @@
 package com.capton.colofulprogressbardemo;
 
+import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import com.capton.colorfulprogressbar.ColorfulProgressbar;
+import com.capton.colorfulprogressbar.ColorfulView;
 import com.capton.colorfulprogressbar.DisplayUtil;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,11 +24,23 @@ public class MainActivity extends AppCompatActivity {
     Switch aSwitch;
     Switch aSwitch2;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+
+       /* setContentView(R.layout.activity_demo);
+        Paint progressPaint=new Paint();
+        Paint progressPaint2=new Paint();
+        progressPaint.setAntiAlias(true);
+        progressPaint2.setAntiAlias(true);
+        progressPaint.setColor(getResources().getColor(com.capton.colorfulprogressbar.R.color.colorAccent));
+        progressPaint2.setColor(getResources().getColor(com.capton.colorfulprogressbar.R.color.ltcolorAccent));
+        ColorfulView colorfulView=new ColorfulView(this,DisplayUtil.dip2px(this,300),progressPaint,progressPaint2);
+        ((ViewGroup)findViewById(R.id.container)).addView(colorfulView);
+*/
     }
 
     private void initView(){
@@ -42,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         progressbar.setHeight(DisplayUtil.dip2px(this,20));
         progressbar.setPercentColorRes(R.color.yellow_green);
-        progressbar.setPercentShadeColorRes(R.color.progressBg); 
+        progressbar.setPercentShaderColorRes(R.color.progressBg);
 
         progressbar2.setHeight(DisplayUtil.dip2px(this,10));
         progressbar2.setStyle(ColorfulProgressbar.STYLE_NORMAL);

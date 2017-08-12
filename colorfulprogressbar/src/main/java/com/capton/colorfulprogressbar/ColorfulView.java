@@ -4,8 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.support.annotation.Nullable;
 import android.view.View;
+import android.view.ViewGroup;
 
 
 /**
@@ -14,7 +14,7 @@ import android.view.View;
  * Created by capton on 2017/8/10.
  */
 
-public class ColorfulView extends View {
+public class ColorfulView extends View  {
     private Paint paint;
     private Paint paint2;
     private int mWidth;
@@ -38,9 +38,9 @@ public class ColorfulView extends View {
         super.onDraw(canvas);
         float x,y;
         float x2,y2;
-         for (int i = 30; i > 0; i--) {
+         for (int i = 20; i > 0; i--) {
              Path p1=new Path();
-            x=y=((float)mWidth/30)*i;
+            x=y=((float)mWidth/20)*i;
              p1.lineTo(0,y);
              p1.lineTo(x,0);
              p1.lineTo(0,0);
@@ -51,9 +51,9 @@ public class ColorfulView extends View {
                 canvas.drawPath(p1, paint2);
             }
         }
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 20; i++) {
              Path p2=new Path();
-            x2=y2=((float)mWidth/30)*i;
+            x2=y2=((float)mWidth/20)*i;
             p2.moveTo(mWidth,mWidth);
             p2.lineTo(mWidth,y2);
             p2.lineTo(x2,mWidth);
@@ -66,4 +66,6 @@ public class ColorfulView extends View {
             }
         }
     }
+
+
 }

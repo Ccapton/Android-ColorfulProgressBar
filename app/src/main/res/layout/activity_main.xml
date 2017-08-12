@@ -40,6 +40,7 @@
     <com.capton.colorfulprogressbar.ColorfulProgressbar
         android:id="@+id/colorful4"
         app:style="@string/style_normal"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         app:max="100"
         app:progress="50"
         app:secondProgress="10"
