@@ -1,25 +1,16 @@
 package com.capton.colorfulprogressbar;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-
-import static android.content.ContentValues.TAG;
-
 /**
  * Created by capton on 2017/8/10.
  */
@@ -32,7 +23,8 @@ public class ColorfulProgressbar extends ViewGroup {
 
     private ColorfulView colofulView;     //双色View
     private TextView progressView;     // 第二进度条
-    private TextView maskView;         // 季度条白色渐变图层
+    private TextView backgroundMaskView;     // 背景罩
+    private TextView maskView;         // 进度条白色渐变图层
     private TextView percentView;       //文字显示进度层
     private Paint progressPaint=new Paint();  //颜色一画笔
     private Paint progressPaint2=new Paint();  //颜色二画笔
@@ -154,6 +146,11 @@ public class ColorfulProgressbar extends ViewGroup {
              progressView.setHeight(getMeasuredHeight());
              progressView.setBackgroundColor(secondProgressColor);
 
+             backgroundMaskView= new TextView(getContext());
+             backgroundMaskView.setWidth(getMeasuredWidth());
+             backgroundMaskView.setHeight(getMeasuredHeight());
+             backgroundMaskView.setBackgroundResource(R.drawable.background);
+
              switch (style) {
                  case STYLE_COLORFUL:
                      colofulView = new ColorfulView(getContext(), getMeasuredWidth(), progressPaint, progressPaint2);
@@ -179,17 +176,19 @@ public class ColorfulProgressbar extends ViewGroup {
              maskView.setBackgroundResource(R.drawable.progress_mask);
 
              /*
-             * 依次添加第二进度条，双色进度条（第一进度条），白色渐变层，百分比文字显示层等四个子View
+             * 依次添加第二进度条，背景罩，双色进度条（第一进度条），白色渐变层，百分比文字显示层等四个子View
              * */
              addView(progressView);
+             addView(backgroundMaskView);
              addView(colofulView);
              addView(maskView);
              addView(percentView);
 
              getChildAt(0).layout(0, 0, getMeasuredWidth(), getMeasuredHeight()); //布局第二进度条位置
+             getChildAt(1).layout(0, 0, getMeasuredWidth(), getMeasuredHeight()); //布局背景罩
 
              int ChildHeight = getMeasuredWidth();
-             getChildAt(1).layout(0, -ChildHeight + getMeasuredHeight(), getMeasuredWidth(), getMeasuredWidth()); //布局双色进度条
+             getChildAt(2).layout(0, -ChildHeight + getMeasuredHeight(), getMeasuredWidth(), getMeasuredWidth()); //布局双色进度条
              /*
              * 根据标识位，为双色进度条设置位移动画（无限向上移动，视觉上达到斜条向右移动的效果）
              * */
@@ -198,20 +197,20 @@ public class ColorfulProgressbar extends ViewGroup {
                  translateAnimation.setDuration((long) (8000 * (float) getMeasuredWidth() / DisplayUtil.getScreenWidthPx(getContext())));
                  translateAnimation.setRepeatCount(-1);
                  translateAnimation.setInterpolator(new LinearInterpolator());
-                 getChildAt(1).setAnimation(translateAnimation);
+                 getChildAt(2).setAnimation(translateAnimation);
                  translateAnimation.start();
              }
 
-             getChildAt(2).layout(0, 0, getMeasuredWidth(), getMeasuredHeight() * 2 / 3); //布局白色渐变层
+             getChildAt(3).layout(0, 0, getMeasuredWidth(), getMeasuredHeight() * 2 / 3); //布局白色渐变层
 
-             getChildAt(3).layout(0, 0, textWidth,textHeight); //布局百分比文字显示层
+             getChildAt(4).layout(0, 0, textWidth,textHeight); //布局百分比文字显示层
              /*
              * 根据标志位，确定是否显示百分比文字显示层。
              * */
              if(showPercent){
-                 getChildAt(3).setVisibility(VISIBLE);
+                 getChildAt(4).setVisibility(VISIBLE);
              }else {
-                 getChildAt(3).setVisibility(GONE);
+                 getChildAt(4).setVisibility(GONE);
              }
 
              /*
@@ -347,19 +346,19 @@ public class ColorfulProgressbar extends ViewGroup {
                 int moveX = getMeasuredWidth() - (int) (partition * getMeasuredWidth());
                 getChildAt(0).setX(-moveX);
             }
-            if (getChildAt(1) != null) {
-                int moveX = getMeasuredWidth() - (int) (partition2 * getMeasuredWidth());
-                getChildAt(1).setX(-moveX);
-            }
-
             if (getChildAt(2) != null) {
                 int moveX = getMeasuredWidth() - (int) (partition2 * getMeasuredWidth());
                 getChildAt(2).setX(-moveX);
             }
-            if (getChildAt(3) != null) {
 
-                if(getChildAt(1).getX()+getMeasuredWidth()>getChildAt(3).getMeasuredHeight()*2) {
-                    getChildAt(3).setX(getChildAt(1).getX()+getMeasuredWidth()-getChildAt(3).getMeasuredHeight()*2);
+            if (getChildAt(3) != null) {
+                int moveX = getMeasuredWidth() - (int) (partition2 * getMeasuredWidth());
+                getChildAt(3).setX(-moveX);
+            }
+            if (getChildAt(4) != null) {
+
+                if(getChildAt(2).getX()+getMeasuredWidth()>getChildAt(4).getMeasuredHeight()*2) {
+                    getChildAt(4).setX(getChildAt(2).getX()+getMeasuredWidth()-getChildAt(4).getMeasuredHeight()*2);
                 }
                 percentView.setText((int) ((float) partition2 * 100) + "%");
 
@@ -367,9 +366,9 @@ public class ColorfulProgressbar extends ViewGroup {
                  * 根据标志位，确定是否显示百分比文字显示层。
                  * */
                 if(showPercent){
-                    getChildAt(3).setVisibility(VISIBLE);
+                    getChildAt(4).setVisibility(VISIBLE);
                 }else {
-                    getChildAt(3).setVisibility(GONE);
+                    getChildAt(4).setVisibility(GONE);
                 }
             }
 
@@ -394,3 +393,4 @@ public class ColorfulProgressbar extends ViewGroup {
             }
     }
 }
+
